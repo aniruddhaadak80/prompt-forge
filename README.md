@@ -4,13 +4,13 @@
 
 ### Prompts in. Runnable things out.
 
-[![Live app](https://img.shields.io/badge/live-prompt--forge-ff6b35?style=flat-square)](https://prompt-forge.vercel.app)
+[![Live app](https://img.shields.io/badge/live-prompt--forge-ff6b35?style=flat-square)](https://prompt-forge-neon-one.vercel.app)
 [![Next.js](https://img.shields.io/badge/Next.js-16-111827?style=flat-square)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square)](https://www.typescriptlang.org)
 [![License: MIT](https://img.shields.io/badge/license-MIT-1f9f72?style=flat-square)](LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-JSON--RPC-34d399?style=flat-square)](#-agent-interface)
 
-[Live App](https://prompt-forge.vercel.app) · [GitHub source](https://github.com/aniruddhaadak80/prompt-forge) · [Health](https://prompt-forge.vercel.app/api/health) · [Agent](https://prompt-forge.vercel.app/agent) · [Issues](https://github.com/aniruddhaadak80/prompt-forge/issues)
+[Live App](https://prompt-forge-neon-one.vercel.app) · [GitHub source](https://github.com/aniruddhaadak80/prompt-forge) · [Health](https://prompt-forge-neon-one.vercel.app/api/health) · [Agent](https://prompt-forge-neon-one.vercel.app/agent) · [Issues](https://github.com/aniruddhaadak80/prompt-forge/issues)
 
 </div>
 
@@ -69,7 +69,7 @@ Open `http://localhost:3000`. Local development uses a seeded process-local adap
 
 ```bash
 DATABASE_URL=<neon-connection-string>
-NEXT_PUBLIC_SITE_URL=https://prompt-forge.vercel.app
+NEXT_PUBLIC_SITE_URL=https://prompt-forge-neon-one.vercel.app
 ```
 
 The first production request creates the tables and idempotently seeds the public examples from `db/schema.sql` and `src/lib/seed.ts`.
@@ -168,13 +168,13 @@ The endpoint is `POST /api/mcp` with JSON-RPC 2.0. `GET /api/mcp` returns discov
   "mcpServers": {
     "prompt-forge": {
       "type": "http",
-      "url": "https://prompt-forge.vercel.app/api/mcp"
+      "url": "https://prompt-forge-neon-one.vercel.app/api/mcp"
     }
   }
 }
 ```
 
-The in-page console at [`/agent`](https://prompt-forge.vercel.app/agent) proves the same path with real initialize, tool discovery, and mutation calls.
+The in-page console at [`/agent`](https://prompt-forge-neon-one.vercel.app/agent) proves the same path with real initialize, tool discovery, and mutation calls.
 
 ## 🔐 Integrity model
 

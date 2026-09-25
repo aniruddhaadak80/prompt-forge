@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 const openApi = {
   openapi: "3.1.0",
   info: { title: "Prompt Forge API", version: "1.0.0", description: "Prompt-to-playable artifact workbench API." },
-  servers: [{ url: "https://prompt-forge.vercel.app" }],
+  servers: [{ url: "https://prompt-forge-neon-one.vercel.app" }],
   paths: {
     "/api/health": { get: { responses: { "200": { description: "Persistence health" } } } },
     "/api/feed": { get: { responses: { "200": { description: "Live or fallback research feed" } } } },

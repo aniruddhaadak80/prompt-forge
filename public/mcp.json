@@ -2,7 +2,7 @@
   "mcpServers": {
     "prompt-forge": {
       "type": "http",
-      "url": "https://prompt-forge.vercel.app/api/mcp"
+      "url": "https://prompt-forge-neon-one.vercel.app/api/mcp"
     }
   }
 }
