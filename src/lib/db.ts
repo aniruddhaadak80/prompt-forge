@@ -131,7 +131,8 @@ async function ensureDatabase(): Promise<void> {
   if (!sql) return;
   const root = globalThis as GlobalWithMemory;
   if (root.__promptForgeDatabaseReady) return;
-  await sql.query(schemaSql);
+  const schemaStatements = schemaSql.split(";").map((statement) => statement.trim()).filter(Boolean);
+  await sql.transaction(schemaStatements.map((statement) => sql.query(statement)));
   const countRows = (await sql.query("select count(*)::int as build_count from prompt_forge_builds")) as unknown as Array<{ build_count: number }>;
   if (Number(countRows[0]?.build_count ?? 0) === 0) {
     const queries = seedBuilds.flatMap((build) => {
