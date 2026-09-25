@@ -12,3 +12,6 @@ playwright-report
 *.db
 *.sqlite
 .DS_Store
+
+.vercel
+.env*
