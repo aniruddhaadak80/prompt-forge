@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+coverage
+test-results
+playwright-report
+.vercel
+*.tsbuildinfo
+.env
+.env.local
+.env.*.local
+*.db
+*.sqlite
+.DS_Store

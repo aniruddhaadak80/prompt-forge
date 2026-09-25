@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "prompt-forge": {
+      "type": "http",
+      "url": "https://prompt-forge.vercel.app/api/mcp"
+    }
+  }
+}
