@@ -455,8 +455,12 @@ export async function retireBuild(id: string, ownerScope: string): Promise<{ bui
   return { build, event };
 }
 
-export async function verifyBuild(id: string): Promise<{ valid: boolean; checked: number; firstBrokenSequence: number | null; events: AuditEvent[] }> {
+export async function verifyBuild(id: string, ownerScope: string): Promise<{ valid: boolean; checked: number; firstBrokenSequence: number | null; events: AuditEvent[] }> {
   await ensureDatabase();
+  // The audit events carry the build payload (title, prompt, score, ...), so
+  // the chain may only be replayed for a build the caller can see.
+  const build = await getBuild(id, ownerScope);
+  if (!build) throw new RepositoryError("Build not found", 404, "not_found");
   const sql = getSql();
   let events: AuditEvent[];
   if (!sql) {

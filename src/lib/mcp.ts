@@ -63,7 +63,7 @@ export async function handleMcp(request: Request, ownerScope: string): Promise<R
     }
     if (name === "verify_chain") {
       const buildId = typeof args.id === "string" ? args.id : "";
-      const verified = await verifyBuild(buildId);
+      const verified = await verifyBuild(buildId, ownerScope);
       return Response.json(result(id, { content: [{ type: "text", text: verified.valid ? "Chain valid" : `Broken at ${verified.firstBrokenSequence}` }], structuredContent: verified }));
     }
     if (name === "export_build") {
